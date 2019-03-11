@@ -1,4 +1,6 @@
-/* var dogs={
+
+//=====================================
+var dogs={
     "boxer":"_____",
     "bulldog":"_______",
     "corgi":"_____"
@@ -12,10 +14,44 @@ var dogsIndex=Math.floor(randomNumber*dogsArray.length);
 //Este nos devuelve el "key" random dentro del objeto dogs
 var dogsKey=dogsArray[dogsIndex];
 //Y en realidad lo que necesitamos imprimir es el _ _ _ que corresponde al key.
-var underscore=dogs[dogsKey]; */
+var underscore=dogs[dogsKey]; 
+//=====================================
 
 
-var dogs=[
+
+
+
+
+//Esta funcion imprime las rayitas al cargar la pagina
+function myValue(){
+    document.getElementById("underscore").innerHTML=underscore;
+    console.log(dogsKey);
+
+}
+
+document.onkeyup= function(event){
+    var letter=event.key;
+    var index=dogsKey.indexOf(letter);
+
+     if(dogsKey.indexOf(letter)!=-1){
+        for(var i=0; i<dogsKey.length;i++){
+            if (dogsKey[i]===letter)
+            underscore[i]=dogsKey[i];
+            document.getElementById("underscore").innerHTML=underscore;
+            console.log(letter);
+            console.log(index);
+        }
+    }else{
+        alert("wrong");
+    }
+ 
+};
+
+
+//====================================================================================================================================================
+
+ // Option push underscore into a new array
+/*var dogs=[
     "corgi",
     "boxer",
     "bulldog"
@@ -29,17 +65,6 @@ for(var i=0; i<dogsKey.length;i++){
     underscore[i]="_";
 }
 
-
-
-//Esta funcion imprime las rayitas al cargar la pagina
-function myValue(){
-    document.getElementById("underscore").innerHTML=underscore;
-    console.log(dogsKey);
-
-}
-
-
-// Esta es la funcion que displayea los _ _ _ de una key random. 
 document.onkeyup= function(event){
     var letter=event.key;
     var index=dogsKey.indexOf(letter);
@@ -52,17 +77,6 @@ document.onkeyup= function(event){
             }
         }        
 }
+*/
 
-
-/*     if(dogsKey.indexOf(letter)!=-1){
-        for(var i=0; i<dogsKey.length;i++){
-            if (dogsKey[i]===letter)
-            underscore[i]=dogsKey[i];
-            document.getElementById("underscore").innerHTML=underscore;
-            console.log(index);
-        }
-    }else{
-        alert("wrong");
-    }
- */
-
+//====================================================================================================================================================
