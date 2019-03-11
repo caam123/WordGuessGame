@@ -33,17 +33,17 @@ document.onkeyup= function(event){
     var letter=event.key;
     var index=dogsKey.indexOf(letter);
 
-     if(dogsKey.indexOf(letter)!=-1){
+     if(index!=-1){
         for(var i=0; i<dogsKey.length;i++){
             if (dogsKey[i]===letter)
-            underscore[i]=dogsKey[i];
-            document.getElementById("underscore").innerHTML=underscore;
-            console.log(letter);
-            console.log(index);
+            underscore[i]=letter;
+
         }
     }else{
-        alert("wrong");
+        alert("Nope! Try again");
     }
+    console.log(letter);
+    console.log(index);    
  
 };
 
