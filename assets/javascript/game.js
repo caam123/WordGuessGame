@@ -1,29 +1,36 @@
 
-//=====================================
+//===== V A R I A B L E S  G L O B A L E S ====
+
+//Lista de las razas
 var dogsArray=["bulldog","corgi","dalmata","chihuahua","salchicha","boxer","labrador"];
-
+//Numero random solo porque luego lo escribo mal
 var randomNumber=Math.random();
-//Esta nos devuelve el index de uno de los keys dentro del array previamente creado
+//Esta nos devuelve el index de uno de las razas dentro del array previamente creado
 var dogsIndex=Math.floor(randomNumber*dogsArray.length);
-//Este nos devuelve el "index" random dentro del array dogs
+//Este nos devuelve el "index" random que es de una raza dentro del array dogs
 var dogsRaza=dogsArray[dogsIndex];
-//Y en realidad lo que necesitamos imprimir es el _ _ _ que corresponde al key.
-
+//Aqui se guarda el valor inicial de oportunidades de adivinar, disminuye 1 sino le atinas
+var guessesLeft=9;
+// Se crea un array del largo de la raza a buscar, pero se sustiye cada index [i] con "_" y con join (despues) imprimimos sin comas. 
 var underscore=[]
-
 for(var i=0; i<dogsRaza.length;i++){
     underscore[i]="_";
 }
 
 //Esta linea imprime las rayitas
 document.getElementById("underscore").textContent=underscore.join("");
+//Esta linea imprime los wins
+document.getElementById("guesses").textContent=guessesLeft;
+
 //Pa saber que palabra magica es
 console.log(dogsRaza)
 
 
 
 document.onkeyup= function(event){
+    // Es igual a la tecla que se oprime
     var letter=event.key;
+    // Lo que hace el index es verificar si la letter (tecla presionada) existe dentro de la palabra random dogsRaza
     var index=dogsRaza.indexOf(letter);
     console.log("dogsRaza",dogsRaza);
      if(index!=-1){
@@ -38,11 +45,11 @@ document.onkeyup= function(event){
         document.getElementById("underscore").textContent=underscore.join("");
     }else{
         alert("Nope! Try again");
+        guessesLeft--;
+        document.getElementById("guesses").textContent=guessesLeft;
     }
 
-    var guesses=9;
-    for(i=9,)
-
+ 
 
     // console.log(letter);
     // console.log(index);    
