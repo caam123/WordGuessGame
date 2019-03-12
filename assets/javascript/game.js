@@ -32,13 +32,17 @@ function myValue(){
 document.onkeyup= function(event){
     var letter=event.key;
     var index=dogsKey.indexOf(letter);
-
+    console.log("dogsKey",dogsKey);
      if(index!=-1){
         for(var i=0; i<dogsKey.length;i++){
-            if (dogsKey[i]===letter)
-            underscore[i]=letter;
-
+            if (dogsKey[i]===letter){
+                console.log("se encontro letra",underscore)
+                underscore[i]=letter;
+                console.log("se modifco underscore",underscore,letter)
+            }
         }
+        console.log(underscore);
+        document.getElementById("underscore").textContent=underscore;
     }else{
         alert("Nope! Try again");
     }
