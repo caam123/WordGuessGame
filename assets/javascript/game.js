@@ -1,53 +1,51 @@
 
 //=====================================
-var dogs={
-    "boxer":"_____",
-    "bulldog":"_______",
-    "corgi":"_____"
-};
-//Object.key(dogs) crea un array de las keys del objeto, aqui despliega las razas en array
-var dogsArray=Object.keys(dogs);
-//esta la puse porque no la escribia bien y me desespere
+var dogsArray=["bulldog","corgi","dalmata","chihuahua","salchicha","boxer","labrador"];
+
 var randomNumber=Math.random();
 //Esta nos devuelve el index de uno de los keys dentro del array previamente creado
 var dogsIndex=Math.floor(randomNumber*dogsArray.length);
-//Este nos devuelve el "key" random dentro del objeto dogs
-var dogsKey=dogsArray[dogsIndex];
+//Este nos devuelve el "index" random dentro del array dogs
+var dogsRaza=dogsArray[dogsIndex];
 //Y en realidad lo que necesitamos imprimir es el _ _ _ que corresponde al key.
-var underscore=dogs[dogsKey]; 
-//=====================================
 
+var underscore=[]
 
-
-
-
-
-//Esta funcion imprime las rayitas al cargar la pagina
-function myValue(){
-    document.getElementById("underscore").innerHTML=underscore;
-    console.log(dogsKey);
-
+for(var i=0; i<dogsRaza.length;i++){
+    underscore[i]="_";
 }
+
+//Esta linea imprime las rayitas
+document.getElementById("underscore").textContent=underscore.join("");
+//Pa saber que palabra magica es
+console.log(dogsRaza)
+
+
 
 document.onkeyup= function(event){
     var letter=event.key;
-    var index=dogsKey.indexOf(letter);
-    console.log("dogsKey",dogsKey);
+    var index=dogsRaza.indexOf(letter);
+    console.log("dogsRaza",dogsRaza);
      if(index!=-1){
-        for(var i=0; i<dogsKey.length;i++){
-            if (dogsKey[i]===letter){
-                console.log("se encontro letra",underscore)
+        for(var i=0; i<dogsRaza.length;i++){
+            if (dogsRaza[i]===letter){
+                // console.log("se encontro letra",underscore)
                 underscore[i]=letter;
-                console.log("se modifco underscore",underscore,letter)
+                // console.log("se modifco underscore",underscore,letter)
             }
         }
-        console.log(underscore);
-        document.getElementById("underscore").textContent=underscore;
+        // console.log(underscore);
+        document.getElementById("underscore").textContent=underscore.join("");
     }else{
         alert("Nope! Try again");
     }
-    console.log(letter);
-    console.log(index);    
+
+    var guesses=9;
+    for(i=9,)
+
+
+    // console.log(letter);
+    // console.log(index);    
  
 };
 
@@ -61,21 +59,21 @@ document.onkeyup= function(event){
     "bulldog"
 ];
 
-var dogsKey = dogs[Math.floor(Math.random()*dogs.length)];
+var dogsRaza = dogs[Math.floor(Math.random()*dogs.length)];
 
 var underscore=[]
 
-for(var i=0; i<dogsKey.length;i++){
+for(var i=0; i<dogsRaza.length;i++){
     underscore[i]="_";
 }
 
 document.onkeyup= function(event){
     var letter=event.key;
-    var index=dogsKey.indexOf(letter);
+    var index=dogsRaza.indexOf(letter);
 
     if (index>0){
-            for(var i=0; i<dogsKey.length;i++){
-                if(dogsKey[i]===letter){
+            for(var i=0; i<dogsRaza.length;i++){
+                if(dogsRaza[i]===letter){
                     underscore[i]=letter;
                 }
             }
