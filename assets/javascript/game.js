@@ -44,11 +44,15 @@ document.onkeyup= function(event){
         // console.log(underscore);
         document.getElementById("underscore").textContent=underscore.join("");
     }else{
-        alert("Nope! Try again");
         guessesLeft--;
         document.getElementById("guesses").textContent=guessesLeft;
-    }
+        alert("Nope! Try again");
 
+    }
+    var lettersGuessed = [""];
+        lettersGuessed.push(letter);
+        document.getElementById("lettersGuessed").textContent=lettersGuessed;
+        console.log(lettersGuessed);
  
 
     // console.log(letter);
