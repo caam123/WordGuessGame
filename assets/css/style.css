@@ -6,6 +6,10 @@ body{
     color:#444;
 }
 
+.container{
+    max-height: 90vh;
+}
+
 h1{
     text-transform:uppercase;
     color:orange;
@@ -27,7 +31,7 @@ h1{
 
 .card{
     
-    margin:30px auto;
+    margin:15px 0;
     padding:0;
     border: 1px solid rgb(255, 207, 117);
 }
@@ -50,6 +54,8 @@ h1{
 
 .jumbotron{
     background-color: rgb(255, 249, 238);
+    height: 35vh;
+    padding-top: 2em;
 }
 
 #lettersGuessed{
