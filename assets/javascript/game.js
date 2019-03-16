@@ -11,19 +11,18 @@ var randomNumber = Math.random();
 var dogsIndex = Math.floor(randomNumber*dogsArray.length);
 //Este nos devuelve el "index" random que es de una raza dentro del array dogs
 var dogsRaza = dogsArray[dogsIndex];
-
-var underscore = []
+//Aqui se guarda el valor inicial de oportunidades de adivinar, disminuye 1 sino le atinas
+var guessesLeft = 9;
 // Se crea un array del largo de la raza a buscar, pero se sustiye cada index [i] con "_" y con join (despues) imprimimos sin comas. 
+var underscore = []
 for(var i=0; i<dogsRaza.length; i++){
     underscore[i] = "_";
 }
-var lettersGuessed = [];
 
 
-//Marcadores 
-var guessesLeft = 9;
-var wins= 0;
-var lost=0;
+
+
+
 
 
 
@@ -38,84 +37,48 @@ console.log(dogsRaza)
 //===== F U N C I O N ==============
 
 
-function startGame (event){
-    // Es igual a la tecla que se oprime
-    var letter=event.key;
-    // Lo que hace el index es verificar si la letter (tecla presionada) existe dentro de la palabra random dogsRaza
-    var index=dogsRaza.indexOf(letter);
-    console.log(dogsRaza);
-
-        if(index!=-1){
-        for(var i=0; i<dogsRaza.length; i++){
-            if (dogsRaza[i]===letter){
-                // console.log("se encontro letra",underscore)
-                underscore[i]=letter;
-                // console.log("se modifco underscore",underscore,letter)
-            }
-        }
-        // console.log(underscore); imprime de nuevo el underscore con el index cambiado por letra 
-        document.getElementById("underscore").textContent=underscore.join("");
-    }else{
-        //Si no encuentra match entonces disminuye los guesses en -1
-        guessesLeft--;
-            //Imprime los guesses left
-        document.getElementById("guesses").textContent=guessesLeft;
-        //alerta que no es la letra
-        alert("Nope! Try again");
-    }
-
-    lettersGuessed.push(event.key);
-    document.getElementById("lettersGuessed").textContent = lettersGuessed;
-    console.log("array de guessed", lettersGuessed);
-};
+    document.onkeyup = function StartGame (event){
+        // Es igual a la tecla que se oprime
+        var letter=event.key;
+        // Lo que hace el index es verificar si la letter (tecla presionada) existe dentro de la palabra random dogsRaza
+        var index=dogsRaza.indexOf(letter);
+        console.log(dogsRaza);
     
-//==== START OVER=====
+         if(index!=-1){
+            for(var i=0; i<dogsRaza.length; i++){
+                if (dogsRaza[i]===letter){
+                    // console.log("se encontro letra",underscore)
+                    underscore[i]=letter;
+                    // console.log("se modifco underscore",underscore,letter)
+                }
+            }
+            // console.log(underscore); imprime de nuevo el underscore con el index cambiado por letra 
+            document.getElementById("underscore").textContent=underscore.join("");
+        }else{
+            //Si no encuentra match entonces disminuye los guesses en -1
+            guessesLeft--;
+             //Imprime los guesses left
+            document.getElementById("guesses").textContent=guessesLeft;
+            //alerta que no es la letra
+            alert("Nope! Try again");
+        }
 
-function startOver(){
-    guessesLeft = 9;
-    lettersGuessed = [];
-};
-
-
-function foundLetter(){
-    if(underscore.toString()==dogsRaza.toString()){
-        wins++;
-        console.log("marcador")
-        startOver();
-    }
-}
-
-function foundLetter(){
-    if(underscore.toString()==dogsRaza.toString()){
-        wins++;
-        console.log("marcador")
-        startOver();
-    }
-}
-
-
-
-
-
-
-//====================CEMEMENTERIO DE PRUEBAS Y ERRORES=======================================
 
 
 /*     var lettersGuessed=[];
         lettersGuessed.push(event.key);
         document.getElementById("lettersGuessed").textContent=lettersGuessed;        
         console.log(lettersGuessed); */
+};
 
+//====== OPCION TROPICALIZADA FUERA DE LA FUNCION GENERAL ¿? NO SE PORQUE =======/
 
-
-
-/*     document.onkeypress = function (event){
+var lettersGuessed = [];
+    document.onkeypress = function (event){
     lettersGuessed.push(event.key);
     document.getElementById("lettersGuessed").textContent = lettersGuessed;
     console.log("array de guessed", lettersGuessed);
-}; */
-
-
+};
 
 
 
