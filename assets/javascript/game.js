@@ -4,11 +4,13 @@
 // Lista de las razas
 var dogsArray = ["bulldog","corgi","dalmata","chihuahua","salchicha","boxer","labrador"];
 
-// Este nos devuelve el "index" random que es de una raza dentro del array dogs
+
 // la ponemos vacia para que existe, pero sui valor sera dado en setUp
-dogsRaza = "";
+var dogsRaza = "";
 //var dogsRaza = dogsArray[dogsIndex];
 var underscore = [];
+//index testing
+var index = "";
 
 
 
@@ -34,14 +36,11 @@ var lettersGuessed = [];
 setUp()
 
     document.onkeyup = function StartGame (event){
-        //No se porque pero tuve que repetirlo aqui. Ya no entendi porque si la declare global vacia, no deberia tomar el valor de la que esta en setUp? Preguntar
-        //var dogsRaza = dogsArray[dogsIndex];
-        // Es igual a la tecla que se oprime
         var letter=event.key;
         // Lo que hace el index es verificar si la letter (tecla presionada) existe dentro de la palabra random dogsRaza
         var index=dogsRaza.indexOf(letter);
         //console.log("fuck you" + dogsRaza);
-    
+
          if(index!=-1){
             for(var i=0; i<dogsRaza.length; i++){
                 if (dogsRaza[i]===letter){
@@ -69,8 +68,8 @@ setUp()
  //Declaro funcion pero no la llamo aqui, sino dentro de la otra funcion   
 
     function setUp(){
+    //Esta es la manera CORRECTA de hacerlo sino se repite siempre la misma palabra
      dogsRaza = dogsArray[Math.floor(Math.random()*dogsArray.length)];   
-    //var dogsRaza = dogsArray[dogsIndex];
     //console.log("setup " + dogsRaza)
     // Se crea un array del largo de la raza a buscar, pero se sustiye cada index [i] con "_" y con join (despues) imprimimos sin comas. 
     for(var i=0; i<dogsRaza.length; i++){
@@ -91,13 +90,22 @@ setUp()
         var check = "_";
         var indexCheck = underscore.indexOf(check);
         //console.log(indexCheck+ "Probando check");
-        if (indexCheck<0){
+        if(underscore.join("")==dogsRaza){
+            document.getElementById("underscore").textContent = underscore.join("");
+            alert("win win win winneeeer!");
             wins++;
             document.getElementById("wins").textContent = wins;
-            document.getElementById("underscore").textContent = underscore.join("");
-            alert("You have won");
             clear();
-         };
+        }
+
+/*         if (indexCheck===-1){
+            document.getElementById("underscore").textContent = underscore.join("");
+            wins++;
+            document.getElementById("wins").textContent = wins;
+            alert("You have won");
+            document.getElementById("underscore").textContent = underscore.join("");
+            clear();
+         }; */
 
          if (guessesLeft<0){
             alert("You lost");
@@ -110,6 +118,8 @@ setUp()
     function clear(){
         guessesLeft = 9;
         lettersGuessed = [];
+        //Este resetea a quelas rayitas queden cortas porque si despues de chihuahua seguia corgi, se veian las ultimas letras 
+        underscore =["_"]
         setUp();
     }
 
