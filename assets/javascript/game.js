@@ -25,7 +25,7 @@ var guessesLeft = 9;
 var lettersGuessed = [];
     document.onkeypress = function (event){
     lettersGuessed.push(event.key);
-    document.getElementById("lettersGuessed").textContent = lettersGuessed;
+    document.getElementById("lettersGuessed").textContent = lettersGuessed.join(" - ");
     console.log("array de guessed", lettersGuessed);
 };
 

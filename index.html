@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Word Game Guess </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
 </head>
 <!--Como no queria presionar tecla para que salieran los _ _ _ lo puse aqui "onload"-->
+
 <body>
-<div class="container">
-    <div>
+    <div class="container">
+        <div class="jumbotron text-center">
             <h1>Hangman</h1>
             <h2>Dog breeds</h2>
             <h3>Spanish Edition</h2>
-    </div>
-    <div>
-            <p>
+        </div>
+        <div class="card" id="press">
+            <p class="card-title text-center">
                 Press any key to get started!
             </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="current-word card text-center">
+                    <h3 class="card-header">Current word</h3>
+                    <span class="card-text" id="underscore"></span>
+                </div>
+            </div>
+        </div>
+
+        
+            <div class="number-guess card otros text-center col-sm-3">
+                <h5 class="card-header"> Number of guesses remaining</h5>
+                <span class="card-text" id="guesses"></span>
+            </div>
+
+            <div class="letters card otros text-center col-sm-3">
+                <h5 class="card-header">Letters already guessed</h5>
+                <span id="lettersGuessed" class="card-text"></span>
+            </div>
+
+            <div class="score card otros col-sm-3">
+                <h5 class="card-header text-center">Wins</h5>
+                <span class="card-text text-center" id="wins">_</span>
+            </div>
+        
 
     </div>
-    <div class="current-word">
-        <h3>Current word</h3>
-        <span id="underscore"></span>
-    </div>
-
-    <div class="number-guess">
-    <h3> Number of guesses remaining</h3>
-    <span id="guesses"></span>
-    </div>
-
-    <div class="letters">
-        <h3>Letters already guessed</h3>
-        <span id="lettersGuessed"></span>
-    </div>
-
-    <div class="score">
-        <h3>Wins</h3>
-        <span id="wins">_</span>
-    </div>
-</div>
 
 
 </body>
 <script src="assets/javascript/game.js"></script>
+
 </html>
