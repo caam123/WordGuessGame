@@ -65,6 +65,8 @@ setUp()
 
 
 
+
+ // FUNCIONES DECLARADAS POR A PARTE
  //Declaro funcion pero no la llamo aqui, sino dentro de la otra funcion   
 
     function setUp(){
@@ -108,7 +110,7 @@ setUp()
          }; */
 
          if (guessesLeft<0){
-            alert("You lost");
+            alert("You lost! The word was "+ dogsRaza.toUpperCase());
             clear();
          };
         
