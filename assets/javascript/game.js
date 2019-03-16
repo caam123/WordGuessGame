@@ -19,12 +19,7 @@ for(var i=0; i<dogsRaza.length; i++){
     underscore[i] = "_";
 }
 
-
-
-
-
-
-
+var wins = 0;
 
 
 //Esta linea imprime las rayitas
@@ -63,13 +58,32 @@ console.log(dogsRaza)
             alert("Nope! Try again");
         }
 
+        check();
+    };        
+
+
+
+ //Declaro funcion pero no la llamo aqui, sino dentro de la otra funcion   
+    function check(){
+        var check = "_";
+        var indexCheck = underscore.indexOf(check);
+        console.log(indexCheck+ "fskjrngkjrbgjb");
+        for(var j=0; j<underscore.length; j++){
+            if (indexCheck<0){
+                alert("You have won");
+                wins++;
+                document.getElementById("wins"),textContent = wins;
+                startGame();
+            };
+        };
+    }
 
 
 /*     var lettersGuessed=[];
         lettersGuessed.push(event.key);
         document.getElementById("lettersGuessed").textContent=lettersGuessed;        
         console.log(lettersGuessed); */
-};
+
 
 //====== OPCION TROPICALIZADA FUERA DE LA FUNCION GENERAL ¿? NO SE PORQUE =======/
 
