@@ -45,12 +45,20 @@ nav{
 }
 
 a{
-    color:white;
+    color:beige;
 }
 
 a:link{
 text-decoration: none;
 }
+
+a:hover{
+text-decoration: none;
+color:orange;
+
+}
+
+
 
 .container{
     max-height: 90vh;
@@ -59,7 +67,7 @@ text-decoration: none;
 h1{
     text-transform:uppercase;
     color:var(--beige);
-    font-size: 5em;
+    font-size: 5.5em;
     font-family: 'Caveat Brush', cursive;
     letter-spacing: 0.15em;
 }
@@ -67,39 +75,41 @@ h1{
 h2{
     color: orange;
     text-transform: uppercase;
-    letter-spacing: 0.1em; 
-   
+    letter-spacing: 0.2em; 
+    font-size: 2em;   
+    margin: 1em auto;
 }
 
 #underscore{
-    letter-spacing:15px;
+    letter-spacing:20px;
     font-size: 2.5em;
     text-transform: uppercase;
+    font-weight:100;
 }
 
-#press{
-    background-color: rgb(255, 199, 108);
-    font-weight: bold;
-    color:#666;
-    padding-top: 5px;
-}
 
 .card{
     
     margin:15px 0;
     padding:0;
     border: 1px solid rgb(255, 207, 117);
+    background-color:transparent!important;
+    font-size: 1em;
 }
 
 .card-header{
-    background-color:rgb(255, 233, 192);
-    border: 1px solid rgb(255, 207, 117);
-    color:rgb(255, 155, 41);
+    color:beige;
+    text-transform: uppercase;
+    font-size: 1.3em;
 }
 
 .card-text{
+    color:orange;
     font-size: 2em;
+   
 }
+
+
 
 .otros h3{
     background-color:#eee;
@@ -116,4 +126,23 @@ h2{
 #lettersGuessed{
     text-transform: uppercase;
     font-size: 1.5em;
+}
+
+
+#press{
+    width: 60%;
+    margin: 1em auto;
+    padding: 0.2em;
+    background-color: transparent;
+}
+
+.card-title{
+    color:whitesmoke;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-top: 0.5em;
+    width:100%;    
 }
