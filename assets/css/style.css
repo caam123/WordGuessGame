@@ -1,8 +1,10 @@
 
 :root{
-    --gris:#7b7b7b ;
-    --beige:#f1f1cc ;
-    --cafe:#99705f ;
+    --gris:rgb(252, 252, 252);
+    --amarillo:#F9F9EB;
+    --naranja: rgb(255, 216, 139);
+    --marron:rgb(189, 127, 3);
+    --alpha:0.5;
 }
 
 
@@ -13,11 +15,12 @@
     margin:0;
 }
 body{
-    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
     color:#444;
     margin:0!important;
     padding:0!important;
     background-color: var(--cafe);
+    min-width: 90vh;
 }
  hr{
      color:black;
@@ -26,26 +29,32 @@ body{
 nav{
     margin-top: 0!important;
     height:2.5em;
-    border-bottom: 1px solid var(--beige);
+    border-bottom: 1px solid lightgray;
     margin-bottom: 2em;
     padding: 0;
     background-color: var(--cafe);
 }
 
 #back{
-    color:greenyellow;
+    color:gray;
     margin: 0.6em 0.5em 0.5em 0.5em;
     padding: 0.1em 0 1.5em 0;
-    border:1px solid white;
+    border:1px solid lightgray;
     width:1.5em;
     height: 1.5em;
     text-align: center;
-    background-color: var(--cafe);
+    background-color: white;
 
+}
+#back:hover{
+    color:var(--naranja);
+    border:1px solid var(--naranja);
+    background-color: var(--gris);
+    transition: ease-in 0.2s;
 }
 
 a{
-    color:beige;
+    color:lightgray;
 }
 
 a:link{
@@ -54,95 +63,155 @@ text-decoration: none;
 
 a:hover{
 text-decoration: none;
-color:orange;
+color:var(--naranja);
 
 }
 
+/* ----- body ----- */
+
+
+.row{
+    margin-bottom: 2rem;
+}
 
 
 .container{
-    max-height: 90vh;
-}
-
-h1{
-    text-transform:uppercase;
-    color:var(--beige);
-    font-size: 5.5em;
-    font-family: 'Caveat Brush', cursive;
-    letter-spacing: 0.15em;
-}
-
-h2{
-    color: orange;
-    text-transform: uppercase;
-    letter-spacing: 0.2em; 
-    font-size: 2em;   
-    margin: 1em auto;
-}
-
-#underscore{
-    letter-spacing:20px;
-    font-size: 2.5em;
-    text-transform: uppercase;
-    font-weight:100;
-}
-
-
-.card{
-    
-    margin:15px 0;
+    margin:0 auto;
     padding:0;
-    border: 1px solid rgb(255, 207, 117);
-    background-color:transparent!important;
-    font-size: 1em;
+    width: 100vw;
+
 }
 
-.card-header{
-    color:beige;
-    text-transform: uppercase;
-    font-size: 1.3em;
-}
+.aside{
+    background-color: var(--amarillo);
+    width:100%;
+    text-align: center;
+    border-right: 0.5rem solid white;
+    min-height: 90vh;
 
-.card-text{
-    color:orange;
-    font-size: 2em;
    
 }
 
+h1, h2{
+    font-family: 'Caveat Brush', sans-serif;
+    margin: 1em 0;
+}
 
-
-.otros h3{
-    background-color:#eee;
+h1{
+    font-size: 4em;
     color:gray;
- 
 }
 
-.jumbotron{
-    background-color: rgb(255, 249, 238);
-    height: 35vh;
-    padding-top: 2em;
-}
-
-#lettersGuessed{
+h2{
+    font-size: 2em;
+    color:rgb(160,160,160);
     text-transform: uppercase;
-    font-size: 1.5em;
+    letter-spacing: 0.25em;
+    margin-bottom: 0em;
 }
 
+.edition:before{
+    display:block;
+    content:"";
+    width:90%;
+    margin: 0.5em auto;
+    border-top:1px solid gray;
 
-#press{
-    width: 60%;
-    margin: 1em auto;
-    padding: 0.2em;
-    background-color: transparent;
 }
 
-.card-title{
-    color:whitesmoke;
-    font-size: 1.2em;
-    font-family: 'Roboto', sans-serif;
+.edition{
+    font-size: 1em;
+    color:var(--naranja);
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+}
+
+.picsContainer{
+    position:relative;
+    padding:1em;
+}
+
+#circle1{
+    background-color: var(--naranja);
+    opacity:0.5;
+    width:6rem;
+    height:6rem;
+    border-radius: 50%;
+    position: absolute;
+    top:0.2em;
+    left:2em;
+    z-index: 2!important
+
+}
+
+#circle2{
+    background-color: var(--naranja);
+    opacity:0.5;
+    width:4rem;
+    height:4rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 01rem;
+    bottom:01rem;
+    z-index: 1!important;
+}
+
+
+#dogPic{
+    margin:0 auto;
+    background-color: gray;
+    width: 15rem;;
+    height:15rem;
+    border-radius: 50%;
+    z-index: 9!important;
+}
+
+
+
+main{
+    background-color: #F5F5F5;
+    width:100%;
+    padding-top:17rem;
+    font-size: 20px;
+    min-height: 90vh;
+}
+
+h3{
+    font-size: 1em;
+    font-weight: 300;
+    float:left;
+    display:inline-block;
+}
+
+#pulse{
+    height: 1.5rem;
+    width:0.5rem;
+    background-color: var(--naranja);
+    display:inline-block;
+    float:left;
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+}
+
+.scoreContainer p,
+.current-word p {
+    font-size: 0.85em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+
+.square{
+    background-color:rgba(255,216,139,0.5);
+    padding:1rem;
+    color:gray;
     text-align: center;
-    margin-top: 0.5em;
-    width:100%;    
+    width:100%!important;
+}
+
+.fas{
+    color: var(--marron);
+    margin-right: 0.25em;
+    opacity: 0.75;
 }

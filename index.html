@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Word Game Guess </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
 </head>
@@ -22,10 +23,57 @@
             <div id="back"><span ></span><a href="https://caam123.github.io/Bootstrap-portfolio/portfolio.html"><</a></span></div>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+        <aside class="aside col-sm-4">
+                <h1>
+                    Hangman
+                </h1>
+                <h2>
+                    Dog Breeds
+                </h2>
+                <p class="edition">Spanish Edition</p>
+                <div class="picsContainer">
+                    <div id="circle1"></div>
+                    <div id="circle2"></div>
+                    <div id="dogPic"></div>
+                </div>
+            </aside>
+            <main class="col-sm-8">
+                <div class="row">
+                    <span id="pulse"></span>
+                    <h3>Press any key to get started</h3>
+                </div>
+
+                <div class="row scoreContainer">
+                    <div class="livesContainer col-sm-2">
+                        <p><i class="fas fa-dog"></i>Lives</p>
+                        <div class="square" id="guesses">5</div>
+                    </div>
+                    <div class="winsContainer col-sm-2">
+                        <p><i class="fas fa-paw"></i>Wins</p>
+                        <div class="square" id="wins">0</div>
+                    </div>
+                    <div class="yourGuess col-sm-8">
+                        <p><i class="fas fa-bone"></i>Your guesses</p>
+                        <div class="square" id="lettersGuessed">0</div>
+                    </div>
+                </div>
+                <div class="row current-word col-sm-12">
+                        <p><i class="fas fa-bone"></i>Current word</p>
+                        <div class="underscore square " id="underscore"></div>
+                        
+
+                </div>
+            </main>
+        </div>
+
+    </div>
         
 
 
-    <div class="container">
+<!--     <div class="container">
         <div class=" text-center">
             <h1>Hangman</h1>
             <h2>Dog breeds | Spanish Edition</h2>
@@ -61,7 +109,7 @@
                 <span class="card-text text-center" id="wins"></span>
             </div>
         </div>
-
+ -->
     </div>
 
 
