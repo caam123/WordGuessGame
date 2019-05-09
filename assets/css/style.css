@@ -71,7 +71,7 @@ color:var(--naranja);
 
 
 .row{
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 
@@ -158,21 +158,10 @@ h2{
 }
 
 
-#dogPic{
-    margin:0 auto;
-    background-color: gray;
-    width: 15rem;;
-    height:15rem;
-    border-radius: 50%;
-    z-index: 9!important;
-}
-
-
-
 main{
     background-color: #F5F5F5;
     width:100%;
-    padding-top:17rem;
+    padding-top:17.5rem;
     font-size: 20px;
     min-height: 90vh;
 }
@@ -196,7 +185,7 @@ h3{
 
 .scoreContainer p,
 .current-word p {
-    font-size: 0.85em;
+    font-size: 0.90em;
     font-weight: 300;
     letter-spacing: 1px;
 }
@@ -214,4 +203,43 @@ h3{
     color: var(--marron);
     margin-right: 0.25em;
     opacity: 0.75;
+}
+
+#lettersGuessed{
+    text-transform: uppercase;
+}
+
+.underscore{
+    margin:0 auto;
+    padding:0.5rem;
+    text-align: center!important;
+    background-color: rgba(255,216,139,0.4);
+}
+#underscore{
+    letter-spacing: 1.25em;
+    font-size: 2em;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: "Caveat Brush", sans-serif;
+}
+
+
+/******** DOG PIC *********/
+
+#dogPic{
+    display:block;
+    margin:0 auto;
+    background-color: gray;
+    width: 15rem;;
+    height:15rem;
+    border-radius: 50%;
+    z-index: 9!important;
+
+}
+
+img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
